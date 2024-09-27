@@ -14,7 +14,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background: linear-gradient(90deg, rgba(13,39,74,1) 10%, rgba(255,255,255,1) 30%, rgba(13,39,74,1) 45%, rgba(13,39,74,1) 55%, rgba(255,255,255,1) 70%, rgba(13,39,74,1) 90%);
+    background: linear-gradient(90deg, rgba(29, 77, 139,1) 10%, rgba(255,255,255,1) 30%, rgba(29, 77, 139,1) 45%, rgba(29, 77, 139,1) 55%, rgba(255,255,255,1) 70%, rgba(29, 77, 139,1) 90%);
     background-attachment: fixed;
     background-size: 100% 100%;
     color: var(--primary-color);
@@ -30,13 +30,13 @@ header {
     text-align: center;
     padding: 20px;
     background: rgb(13,39,74);
-    background: linear-gradient(90deg, rgba(13,39,74,1) 10%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(13,39,74,1) 90%);
+    background: linear-gradient(90deg, rgba(29, 77, 139,1) 10%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(29, 77, 139,1) 90%);
     color: var(--primary-color);
 }
 
 nav {
     text-align: center;
-    background-color: var(--shadow-color);
+    background-color: var(--highlight-color);
     padding: 10px 0;
 	top: 0;
 	color: var(--text-color);
@@ -73,12 +73,12 @@ nav ul li a {
     position: absolute;
     top: 100%;
     left: 0;
-    background: rgb(240, 240, 240); /* Matches mobile background */
-    max-height: 0; /* Initially hidden */
-    overflow: hidden; /* Prevent overflow */
-    transition: max-height 0.3s ease, opacity 0.3s ease; /* Smooth transition */
-    opacity: 0; /* Initially hidden */
-    z-index: 1000; /* Ensure it sits above other content */
+    background: rgb(240, 240, 240);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    z-index: 1000;
 }
 
 #dropdown-menu li {
@@ -88,26 +88,26 @@ nav ul li a {
 
 #dropdown-menu li a {
     display: block;
-    padding: 10px 15px; /* Adjust padding as needed */
+    padding: 10px 15px;
     text-decoration: none;
-    color: #333; /* Text color */
+    color: #333;
 }
 
 #dropdown-menu li a:hover {
-    background-color: rgb(220, 220, 220); /* Hover effect */
+    background-color: rgb(220, 220, 220);
 }
 
-/* Show dropdown when active */
+
 #dropdown-menu.active {
-    max-height: 1000px; /* Set max height to a value that fits your menu */
-	transition: max-height 0.3s ease, opacity 0.3s ease; /* Smooth transition */
-    opacity: 1; /* Make it fully visible */
+    max-height: 1000px;
+	transition: max-height 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
 }
 
-/* For mobile styles */
 @media (min-width: 769px) {
     #menu-toggle {
-        display: none; /* Hide the menu icon on larger screens */
+        display: none;
+        display: none;
     }
 	#smallNav {
 	    display: none;

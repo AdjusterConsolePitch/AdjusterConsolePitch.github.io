@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     textBlocks.forEach((block, index) => {
         setTimeout(() => {
             block.classList.add('fade-in');
-        }, index * 300); // Staggered fade-in effect
+        }, index * 1000); // Staggered fade-in effect
     });
 });
 
