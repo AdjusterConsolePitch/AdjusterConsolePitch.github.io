@@ -106,3 +106,25 @@ function sendEmail(event) {
     // Trigger on load for elements already in view
     onScroll();
 });
+
+document.getElementById('menu-toggle').addEventListener('click', function () {
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    dropdownMenu.classList.toggle('active');
+
+});
+
+// Add event listeners to menu items to hide the dropdown when clicked
+const menuItems = document.querySelectorAll('#dropdown-menu li a');
+
+menuItems.forEach(item => {
+    item.addEventListener('click', function () {
+        const dropdownMenu = document.getElementById('dropdown-menu');
+        dropdownMenu.classList.remove('active'); // Hide the dropdown menu
+
+    });
+});
+
+// Scroll back to the top when the button is clicked
+document.getElementById('backToTop').addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
+});

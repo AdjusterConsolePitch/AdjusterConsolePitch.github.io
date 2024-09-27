@@ -20,8 +20,6 @@ body {
     color: var(--primary-color);
 }
 
-
-
 .orbitron {
 	font-family: Orbitron, sans-serif;
 	font-size: 50px;
@@ -40,13 +38,15 @@ nav {
     text-align: center;
     background-color: var(--shadow-color);
     padding: 10px 0;
+	top: 0;
 	color: var(--text-color);
+	position: sticky;
+	z-index: 1000;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-
 }
 
 nav ul li {
@@ -57,6 +57,61 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
+}
+
+#menu-toggle {
+    background: none;
+    border: none;
+    font-size: 24px; /* Adjust size as needed */
+    cursor: pointer;
+}
+
+#dropdown-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgb(240, 240, 240); /* Matches mobile background */
+    max-height: 0; /* Initially hidden */
+    overflow: hidden; /* Prevent overflow */
+    transition: max-height 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+    opacity: 0; /* Initially hidden */
+    z-index: 1000; /* Ensure it sits above other content */
+}
+
+#dropdown-menu li {
+    border-bottom: 1px solid #ccc;
+	margin: 0px;
+}
+
+#dropdown-menu li a {
+    display: block;
+    padding: 10px 15px; /* Adjust padding as needed */
+    text-decoration: none;
+    color: #333; /* Text color */
+}
+
+#dropdown-menu li a:hover {
+    background-color: rgb(220, 220, 220); /* Hover effect */
+}
+
+/* Show dropdown when active */
+#dropdown-menu.active {
+    max-height: 1000px; /* Set max height to a value that fits your menu */
+	transition: max-height 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+    opacity: 1; /* Make it fully visible */
+}
+
+/* For mobile styles */
+@media (min-width: 769px) {
+    #menu-toggle {
+        display: none; /* Hide the menu icon on larger screens */
+    }
+	#smallNav {
+	    display: none;
+	}
 }
 
 button {
@@ -77,7 +132,6 @@ button:hover {
 
 }
 
-
 .content {
     background-color: var(--text-color);
     margin: 40px auto;
@@ -96,6 +150,9 @@ h3 {
     text-align: center;
 }
 
+#employees {
+	margin-bottom: 15px;
+}
 
 #scheduleForm {
     background-color: #f9f9f9;
@@ -121,34 +178,35 @@ h3 {
 
 .form-layout {
     display: flex;
-    flex-direction: column; /* Stack inputs vertically */
+    flex-direction: column;
 }
 
 .form-group {
     display: flex;
-    justify-content: space-between; /* Space between label and input */
-    margin-bottom: 15px; /* Space between each form group */
+    justify-content: space-between;
+    margin-bottom: 15px;
 }
 
 .form-buttons {
     display: flex;
-    justify-content: flex-end; /* Align buttons to the right */
+    justify-content: flex-end;
+	margin: 15px;
 }
-
+.marginite {
+	margin-left: 15px;
+}
 label {
-    flex-basis: 40%; /* Labels take up 40% of the space */
-    padding-right: 10px; /* Space between label and input */
+    flex-basis: 40%;
+    padding-right: 10px; 
 }
 
 input {
-    flex-basis: 55%; /* Inputs take up 55% of the space */
+    flex-basis: 55%;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px; /* Slightly rounded corners for inputs */
+    border-radius: 4px; 
 }
 
-
-/* Fade-in and slide-in effects */
 .fade-in {
     animation: fadeIn 0.5s forwards;
 }
@@ -177,7 +235,31 @@ input {
     }
 }
 
-/* Hidden class for the form */
+#backToTop {
+    position: fixed;
+    bottom: 20px; 
+    right: 20px; 
+    background-color: rgb(29, 77, 139); 
+    color: white; 
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px; 
+    font-size: 18px; 
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+    z-index: 1000; 
+}
+
+#backToTop:hover {
+    opacity: 1; 
+}
+
+.show {
+    display: block;
+}
+
+
 .hidden {
     display: none;
 }
@@ -192,15 +274,45 @@ input {
     transition: opacity 0.5s ease-in-out;
 }
 
-/* Initial state for scroll-triggered fade-in elements */
 .fade-scroll {
     opacity: 0;
-    transform: translateY(20px); /* Slight downward shift to enhance the effect */
+    transform: translateY(20px); 
     transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-/* Fade-in when the element becomes visible */
 .fade-scroll.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Mobile styles */
+@media (max-width: 768px) { /* You can adjust the width as needed */
+    body {
+        background: rgb(240, 240, 240); /* Solid background color */
+    }
+
+    header {
+        background: rgb(240, 240, 240); /* Change header background to solid color */
+    }
+    .orbitron {
+	    font-family: Orbitron, sans-serif;
+	    font-size: 35px;
+    }
+    .content {
+        margin: 80px 15px; /* Double the margin */
+    }
+
+    #scheduleForm {
+        margin-top: 30px; /* Adjust margin-top for schedule form */
+    }
+	
+	#bigNav {
+		display: none;
+	}
+	#smallNav {
+		display: inherit;
+	}
+	#scheduleForm input {
+		max-width: 100px;
+	}
 }
