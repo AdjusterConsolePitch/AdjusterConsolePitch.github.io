@@ -1,0 +1,206 @@
+/* General styles */
+:root {
+    --primary-color: rgb(13, 39, 74);
+    --highlight-color: rgb(29, 77, 139);
+    --shadow-color: rgb(3, 9, 18);
+    --accent-color-1: rgb(21, 62, 117);
+    --accent-color-2: rgb(8, 23, 43);
+    --text-color: #fff;
+    --background-color: #f5f5f5;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(90deg, rgba(13,39,74,1) 10%, rgba(255,255,255,1) 30%, rgba(13,39,74,1) 45%, rgba(13,39,74,1) 55%, rgba(255,255,255,1) 70%, rgba(13,39,74,1) 90%);
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    color: var(--primary-color);
+}
+
+
+
+.orbitron {
+	font-family: Orbitron, sans-serif;
+	font-size: 50px;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    padding: 20px;
+    background: rgb(13,39,74);
+    background: linear-gradient(90deg, rgba(13,39,74,1) 10%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(13,39,74,1) 90%);
+    color: var(--primary-color);
+}
+
+nav {
+    text-align: center;
+    background-color: var(--shadow-color);
+    padding: 10px 0;
+	color: var(--text-color);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+button {
+    background-color: var(--highlight-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+	outline: 2px solid var(--accent-color-2);
+}
+
+button:hover {
+    background-color: var(--text-color);
+	color: var(--primary-color);
+
+}
+
+
+.content {
+    background-color: var(--text-color);
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
+}
+
+h3 {
+    margin-top: 0;
+    text-align: center;
+}
+
+#demo {
+    text-align: center;
+}
+
+
+#scheduleForm {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-top: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(-20px);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#scheduleForm.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+	transition: opacity 0.5s ease, transform 0.5s ease;
+	margin-top: 15px;
+}
+
+.form-layout {
+    display: flex;
+    flex-direction: column; /* Stack inputs vertically */
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between; /* Space between label and input */
+    margin-bottom: 15px; /* Space between each form group */
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-end; /* Align buttons to the right */
+}
+
+label {
+    flex-basis: 40%; /* Labels take up 40% of the space */
+    padding-right: 10px; /* Space between label and input */
+}
+
+input {
+    flex-basis: 55%; /* Inputs take up 55% of the space */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px; /* Slightly rounded corners for inputs */
+}
+
+
+/* Fade-in and slide-in effects */
+.fade-in {
+    animation: fadeIn 0.5s forwards;
+}
+
+.slide-in {
+    animation: slideIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Hidden class for the form */
+.hidden {
+    display: none;
+}
+
+.calculator {
+    padding: 50px 20px;
+	text-align: center;
+}
+
+#result {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Initial state for scroll-triggered fade-in elements */
+.fade-scroll {
+    opacity: 0;
+    transform: translateY(20px); /* Slight downward shift to enhance the effect */
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Fade-in when the element becomes visible */
+.fade-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
