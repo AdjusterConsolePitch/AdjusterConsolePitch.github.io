@@ -1,3 +1,4 @@
+/* General styles */
 :root {
     --primary-color: rgb(13, 39, 74);
     --highlight-color: rgb(29, 77, 139);
@@ -13,7 +14,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background: linear-gradient(90deg, rgba(29, 77, 139,1) 10%, rgba(255,255,255,1) 30%, rgba(29, 77, 139,1) 45%, rgba(29, 77, 139,1) 55%, rgba(255,255,255,1) 70%, rgba(29, 77, 139,1) 90%);
+    background: linear-gradient(90deg, rgba(13,39,74,1) 10%, rgba(255,255,255,1) 30%, rgba(13,39,74,1) 45%, rgba(13,39,74,1) 55%, rgba(255,255,255,1) 70%, rgba(13,39,74,1) 90%);
     background-attachment: fixed;
     background-size: 100% 100%;
     color: var(--primary-color);
@@ -24,24 +25,34 @@ body {
 	font-size: 50px;
 }
 
+#logo1 {
+	height: 150px;
+	width: 150px;
+}
+
+header h1 {
+    display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+/* Header styles */
 header {
     text-align: center;
     padding: 20px;
     background: rgb(13,39,74);
-    background: linear-gradient(90deg, rgba(29, 77, 139,1) 10%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(29, 77, 139,1) 90%);
+    background: linear-gradient(90deg, rgba(13,39,74,1) 10%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 70%, rgba(13,39,74,1) 90%);
     color: var(--primary-color);
 }
 
 nav {
     text-align: center;
-    background-color: var(--highlight-color);
+    background-color: var(--primary-color);
     padding: 10px 0;
 	top: 0;
 	color: var(--text-color);
 	position: sticky;
 	z-index: 1000;
-	border-top: 2px solid black;
-	border-bottom: 2px solid black;
 }
 
 nav ul {
@@ -62,8 +73,18 @@ nav ul li a {
 #menu-toggle {
     background: none;
     border: none;
-    font-size: 24px;
+    font-size: 24px; /* Adjust size as needed */
     cursor: pointer;
+	margin-right: 20px;
+	outline: 2px solid var(--background-color);
+}
+
+#menu-toggle:hover {
+	color: var(--background-color);
+}
+
+#menu-toggle:active {
+	color: var(--background-color);
 }
 
 #dropdown-menu {
@@ -73,12 +94,12 @@ nav ul li a {
     position: absolute;
     top: 100%;
     left: 0;
-    background: rgb(240, 240, 240);
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, opacity 0.3s ease;
-    opacity: 0;
-    z-index: 1000;
+    background: rgb(240, 240, 240); /* Matches mobile background */
+    max-height: 0; /* Initially hidden */
+    overflow: hidden; /* Prevent overflow */
+    transition: max-height 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+    opacity: 0; /* Initially hidden */
+    z-index: 1000; /* Ensure it sits above other content */
 }
 
 #dropdown-menu li {
@@ -88,26 +109,26 @@ nav ul li a {
 
 #dropdown-menu li a {
     display: block;
-    padding: 10px 15px;
+    padding: 10px 15px; /* Adjust padding as needed */
     text-decoration: none;
-    color: #333;
-	border-top: 2px solid black;
+    color: #333; /* Text color */
 }
 
 #dropdown-menu li a:hover {
-    background-color: rgb(220, 220, 220);
+    background-color: rgb(220, 220, 220); /* Hover effect */
 }
 
+/* Show dropdown when active */
 #dropdown-menu.active {
-    max-height: 1000px;
-	transition: max-height 0.3s ease, opacity 0.3s ease;
-    opacity: 1;
+    max-height: 1000px; /* Set max height to a value that fits your menu */
+	transition: max-height 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+    opacity: 1; /* Make it fully visible */
 }
 
+/* For mobile styles */
 @media (min-width: 769px) {
     #menu-toggle {
-        display: none;
-        display: none;
+        display: none; /* Hide the menu icon on larger screens */
     }
 	#smallNav {
 	    display: none;
@@ -285,27 +306,25 @@ input {
     transform: translateY(0);
 }
 
-
-@media (max-width: 768px) {
+/* Mobile styles */
+@media (max-width: 768px) { /* You can adjust the width as needed */
     body {
-        background: rgb(240, 240, 240);
+        background: rgb(240, 240, 240); /* Solid background color */
     }
 
     header {
-        background: rgb(240, 240, 240);
+        background: rgb(240, 240, 240); /* Change header background to solid color */
     }
-	
     .orbitron {
 	    font-family: Orbitron, sans-serif;
 	    font-size: 35px;
     }
     .content {
-        margin: 80px 15px;
-		box-shadow: 0 12px 24px rgba(29, 77, 139, 0.5);
+        margin: 80px 15px; /* Double the margin */
     }
 
     #scheduleForm {
-        margin-top: 30px;
+        margin-top: 30px; /* Adjust margin-top for schedule form */
     }
 	
 	#bigNav {
@@ -313,8 +332,17 @@ input {
 	}
 	#smallNav {
 		display: inherit;
+		text-align: right;
 	}
 	#scheduleForm input {
 		max-width: 100px;
 	}
+	#logo1 {
+	    height: 75px;
+    	width: 75px;
+    }
+	.orbitron {
+	    font-family: Orbitron, sans-serif;
+	    font-size: 25px;
+    }
 }
