@@ -38,56 +38,49 @@ function sendEmail(event) {
 }
   
 
-    document.getElementById('calculateBtn').addEventListener('click', function() {
-        const employeesInput = document.getElementById('employees');
-        const resultElement = document.getElementById('result');
-        resultElement.style.opacity = '0';
-        let employees = parseInt(employeesInput.value);
+document.getElementById('calculateBtn').addEventListener('click', function() {
+    const employeesInput = document.getElementById('employees');
+    const resultElement = document.getElementById('result');
+    resultElement.style.opacity = '0';
+    let employees = parseInt(employeesInput.value);
+
+    if (!employees) {
+        setTimeout(() => {
+            resultElement.innerText = 'Enter estimated users';
+            resultElement.style.opacity = '1';
+        }, 200);
+    } else {
+        let costPerUser;
+        let users;
         
-        if (!employees) {
-            setTimeout(() => {
-                resultElement.innerText = 'Enter estimated users';
-                resultElement.style.opacity = '1';
-            }, 200);
+        if (employees >= 1 && employees <= 50) {
+            costPerUser = 499;
+            users = 50;
+        } else if (employees >= 51 && employees <= 200) {
+            costPerUser = 470;
+            users = 200;
         } else {
-            let costPerUser;
-			let users;
-            if (employees >= 1 && employees <= 25) {
-                costPerUser = 500;
-				users = 25;
-            } else if (employees >= 26 && employees <= 50) {
-                costPerUser = 485;
-				users = 50;
-            } else if (employees >= 51 && employees <= 100) {
-                costPerUser = 475;
-				users = 100;
-            } else if (employees >= 101 && employees <= 200) {
-                costPerUser = 465;
-				users = 200;
-            } else if (employees >= 201 && employees <= 500) {
-                costPerUser = 450;
-				users = 500;
-            } else {
-                costPerUser = 440;
-				users = employees;
-            }
-
-            // Estimate savings and cost
-            const saveEstimate = employees * 3744;
-            const annualCost = users * costPerUser;
-            const profit = saveEstimate - annualCost;
-
-            // Display the result
-            setTimeout(() => {
-                resultElement.innerHTML = `
-                    <p>Projected Annual Savings: $${saveEstimate.toLocaleString()}</p>
-                    <p>Annual Cost: $${annualCost.toLocaleString()}</p>
-                    <p>Net Profit (Savings - Cost): $${profit.toLocaleString()}</p>
-                `;
-                resultElement.style.opacity = '1';
-            }, 200);
+            costPerUser = 440;
+            users = employees;
         }
-    });
+
+        // Estimate savings and cost
+        const saveEstimate = employees * 3744;
+        const annualCost = users * costPerUser;
+        const profit = saveEstimate - annualCost;
+
+        // Display the result
+        setTimeout(() => {
+            resultElement.innerHTML = `
+                <p>Projected Annual Savings: $${saveEstimate.toLocaleString()}</p>
+                <p>Annual Cost: $${annualCost.toLocaleString()}</p>
+                <p>Net Profit (Savings - Cost): $${profit.toLocaleString()}</p>
+            `;
+            resultElement.style.opacity = '1';
+        }, 200);
+    }
+});
+
 	
 	document.addEventListener('DOMContentLoaded', () => {
     const fadeElements = document.querySelectorAll('.fade-scroll');
