@@ -28,7 +28,7 @@ function sendEmail(event) {
     const time = document.getElementById("time").value;
 
     const subject = encodeURIComponent("Demo Request");
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nCompany: ${company}\nPreferred Time: ${time}`);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nCompany: ${company}\nMessage: ${time}`);
     const mailtoLink = `mailto:AdjusterConsole@gmail.com?subject=${subject}&body=${body}`;
     
     window.location.href = mailtoLink; // Redirect to the email client

@@ -96,7 +96,7 @@ nav ul li a {
     margin: 0;
     position: absolute;
     top: 100%;
-    left: 0;
+    right: 0;
     background: rgb(240, 240, 240); /* Matches mobile background */
     max-height: 0; /* Initially hidden */
     overflow: hidden; /* Prevent overflow */
