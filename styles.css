@@ -198,7 +198,7 @@ button:hover {
 }
 
 .image-left-float-big {
-    max-width: 300px;
+    max-width: 400px;
     width: 100%;
     height: auto;
     border-radius: 8px;
@@ -212,6 +212,9 @@ button:hover {
     clear: both;
 }
 
+#tableImg {
+	margin: 50px 20px;
+}
 
 h3 {
     margin-top: 0;
