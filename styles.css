@@ -469,7 +469,6 @@ gc {
 
 .calcResult {
 	width: 50%;
-	
 }
 
 .calcInput input {
@@ -640,6 +639,33 @@ footer {
 		font-size: 18px;
 	}
 	
+	#about div {
+		width: 90%;
+		text-align: justify;
+		margin: auto;
+	}
+	
+	#about p {
+		font-size: 18px;
+	}
+		
+	.calcInput {
+		width: 90%;
+	}
+	
+	#underCalc {
+		width: 100%;
+		margin: auto;
+	}
+
+	.calcResult {
+		width: 90%;
+	}	
+	
+	#underCalc p {
+		font-size: 16px;
+	}
+	
 	.flex-child {
 		width: 100%;
 		margin: 25px;
@@ -652,5 +678,18 @@ footer {
 	
 	.cta-button {
 		font-size: 20px;
+	}
+	
+	.pricing-tiers {
+		flex-direction: column;
+		align-items: center
+	}
+	
+	.tier {
+		width: 80%;
+	}
+	
+	.terms {
+		font-size: 30px;
 	}
 }
