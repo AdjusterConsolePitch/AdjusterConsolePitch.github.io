@@ -1,24 +1,3 @@
-function scheduleDemo() {
-    // Open a mailto link to schedule a demo
-    window.location.href = "mailto:AdjusterConsole@gmail.com?subject=Schedule a Demo&body=I'd like to schedule a demo for the AdjusterConsole program.";
-}
-
-
-// Adding fade-in effect to text blocks
-document.addEventListener('DOMContentLoaded', () => {
-    const textBlocks = document.querySelectorAll('.text-block');
-    textBlocks.forEach((block, index) => {
-        setTimeout(() => {
-            block.classList.add('fade-in');
-        }, index * 300); // Staggered fade-in effect
-    });
-});
-
-function toggleForm() {
-    const form = document.getElementById("scheduleForm");
-    form.classList.toggle("show"); // Toggles visibility and animation
-}
-
 function sendEmail(event) {
     event.preventDefault(); // Prevent the default form submission
     
@@ -36,7 +15,10 @@ function sendEmail(event) {
     // Optionally, close the form after submission
     toggleForm();
 }
-  
+
+document.querySelector('.menu-icon').addEventListener('click', () => {
+	document.querySelector('.nav-links-mobile').classList.toggle('active');
+});
 
 document.getElementById('calculateBtn').addEventListener('click', function() {
     const employeesInput = document.getElementById('employees');
@@ -50,74 +32,111 @@ document.getElementById('calculateBtn').addEventListener('click', function() {
             resultElement.style.opacity = '1';
         }, 200);
     } else {
-        let costPerUser;
-        let users;
-        
-        if (employees >= 1 && employees <= 50) {
-            costPerUser = 499;
-            users = 50;
-        } else if (employees >= 51 && employees <= 200) {
-            costPerUser = 470;
-            users = 200;
-        } else {
-            costPerUser = 440;
-            users = employees;
-        }
+        let costPerUser = 0;
 
-        // Estimate savings and cost
-        const saveEstimate = employees * 3744;
-        const annualCost = users * costPerUser;
-        const profit = saveEstimate - annualCost;
+		if (employees >= 1 && employees <= 50) {
+			costPerUser = 42;
+		} else if (employees >= 51 && employees <= 200) {
+			costPerUser = 39;
+		} else {
+			costPerUser = 37;
+		}
+console.log('costPerUser',costPerUser);
+		// Estimate savings and cost
+		const saveEstimate = employees * 4992;
+		console.log('saveEstimate',saveEstimate);
+		const annualCost = employees * costPerUser * 12;
+		console.log('annualCost',annualCost);
+		const profit = saveEstimate - annualCost;
+		console.log('profit',profit);
 
-        // Display the result
-        setTimeout(() => {
-            resultElement.innerHTML = `
-                <p>Projected Annual Savings: $${saveEstimate.toLocaleString()}</p>
-                <p>Annual Cost: $${annualCost.toLocaleString()}</p>
-                <p>Net Profit (Savings - Cost): $${profit.toLocaleString()}</p>
-            `;
-            resultElement.style.opacity = '1';
-        }, 200);
+		// Calculate ROI
+		const ROI = (profit / annualCost) * 100;
+		console.log('ROI',ROI);
+
+		// Display the result
+		setTimeout(() => {
+			resultElement.innerHTML = `
+				<p>Projected Annual Savings: $${saveEstimate.toLocaleString()}</p>
+				<p>Annual Cost: $${annualCost.toLocaleString()}</p>
+				<p>Net Profit (Savings - Cost): $${profit.toLocaleString()}</p>
+				<p>Return on Investment (ROI): ${ROI.toFixed(2)}%</p>
+			`;
+			resultElement.style.opacity = '1';
+		}, 500);
     }
 });
 
-	
-	document.addEventListener('DOMContentLoaded', () => {
-    const fadeElements = document.querySelectorAll('.fade-scroll');
+function demoReq() {
+    // Display the form overlay by changing its display style
+    document.getElementById('demoForm').style.display = 'flex';
+}
 
-    const onScroll = () => {
-        fadeElements.forEach(el => {
-            const rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight && rect.bottom > 0) {
-                el.classList.add('visible');
-            }
-        });
-    };
+function closeForm() {
+    // Close the form overlay by hiding it
+    document.getElementById('demoForm').style.display = 'none';
+}
 
-    window.addEventListener('scroll', onScroll);
-
-    // Trigger on load for elements already in view
-    onScroll();
-});
-
-document.getElementById('menu-toggle').addEventListener('click', function () {
-    const dropdownMenu = document.getElementById('dropdown-menu');
-    dropdownMenu.classList.toggle('active');
-
-});
-
-// Add event listeners to menu items to hide the dropdown when clicked
-const menuItems = document.querySelectorAll('#dropdown-menu li a');
-
-menuItems.forEach(item => {
-    item.addEventListener('click', function () {
-        const dropdownMenu = document.getElementById('dropdown-menu');
-        dropdownMenu.classList.remove('active'); // Hide the dropdown menu
-
+function submitForm(event) {
+    event.preventDefault(); // Prevent the form from reloading the page
+    
+    // You can collect the form data here for further processing
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const companyName = document.getElementById('companyName').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const message = document.getElementById('message').value;
+    
+    // Do something with the form data (e.g., send it to a server)
+    console.log({
+        firstName,
+        lastName,
+        companyName,
+        email,
+        phone,
+        message
     });
-});
 
-// Scroll back to the top when the button is clicked
-document.getElementById('backToTop').addEventListener('click', function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
-});
+    // Close the form after submission
+    closeForm();
+}
+
+
+/*function ignore() {
+num_adjusters = 100
+pay_per_hour = 26  # Average pay per adjuster per hour
+benefits_percentage = 0.35  # Assume 35% for benefits and overhead
+working_hours_per_day = 8
+working_days_per_year = 250
+productivity_increase = 0.10  // 10% increase in productivity
+claims_per_adjuster_per_day = 15
+program_costs = 200000 
+
+# Calculate total compensation per adjuster (including benefits)
+pay_per_day = pay_per_hour * working_hours_per_day
+annual_base_salary = pay_per_day * working_days_per_year
+annual_total_compensation_per_adjuster = annual_base_salary * (1 + benefits_percentage)
+
+# Current total claims processed per day
+current_total_claims = num_adjusters * claims_per_adjuster_per_day
+
+# Increased claims due to productivity gain (10%)
+additional_claims_per_adjuster = claims_per_adjuster_per_day * productivity_increase
+total_additional_claims_per_day = additional_claims_per_adjuster * num_adjusters
+
+# Annual total additional claims due to productivity increase
+additional_claims_per_year = total_additional_claims_per_day * working_days_per_year
+
+# Calculate how many adjusters' worth of work this saves
+claims_per_adjuster_per_year = claims_per_adjuster_per_day * working_days_per_year
+adjuster_savings = additional_claims_per_year / claims_per_adjuster_per_year
+
+# Calculate the cost savings by avoiding hiring new adjusters
+total_cost_savings = adjuster_savings * annual_total_compensation_per_adjuster
+
+# Net benefit (cost savings from increased productivity - program costs)
+net_program_value = total_cost_savings - program_costs
+
+net_program_value
+}*/

@@ -1,265 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="Strict-Transport-Security" content="max-age=0; includeSubDomains; preload">
-    <title>AdjusterConsole</title>
-    <link rel="stylesheet" href="styles.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
-	
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Website</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1 class="orbitron"><img id="logo1" src="logo1.png"></img>AdjusterConsole</h1>
-        <h2>Unlock Unparalleled Efficiency for Your Claims Adjusters</h2>
-        <p><strong>Boost Productivity by up to 30% with Our Proven Tool</strong></p>
-    </header>
 
-<nav id="smallNav">
-    <button id="menu-toggle" aria-label="Toggle menu">
-        &#9776; <!-- This is the hamburger icon -->
-    </button>
-    <ul id="dropdown-menu">
-        <li><a href="#mission">Mission</a></li>
-        <li><a href="#auto">Automated SOPs</a></li>
-        <li><a href="#custom">Customization</a></li>
-        <li><a href="#security">Security</a></li>
-        <li><a href="#future">Future-Proof</a></li>
-        <li><a href="#training">Training</a></li>
-        <li><a href="#calculator">Savings Calculator</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#demo">Contact</a></li>
-    </ul>
-</nav>
-
-    <nav id="bigNav">
-        <ul>
-            <li><a href="#mission">Mission</a></li>
-            <li><a href="#auto">Automated SOPs</a></li>
-            <li><a href="#custom">Customization</a></li>
-			<li><a href="#support">Support</a></li>
-            <li><a href="#security">Security</a></li>
-            <li><a href="#future">Future-Proof</a></li>
-			<li><a href="#training">Training</a></li>
-			<li><a href="#pricing">Pricing</a></li>
-			<li><a href="#calculator">Savings Calculator</a></li>
-            <li><a href="#demo">Contact</a></li>
-
+  <header>
+    <div class="container" id="overide">
+      <img src="assets/logo1.png" alt="Logo" class="logo">
+      <nav>
+        <div class="menu-icon">&#9776;</div> <!-- Menu icon for mobile -->
+        <ul class="nav-links">
+          <li><a href="#solutions">Solutions</a></li>
+          <li><a href="#industries">Industries</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#savings-calculator">Savings Calculator</a></li>
         </ul>
-    </nav>
+        <ul class="right-links">
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a onclick="demoReq()">Request Demo</a></li>
+        </ul>
+        <ul class="nav-links-mobile">
+          <li><a href="#solutions">Solutions</a></li>
+          <li><a href="#industries">Industries</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#savings-calculator">Savings Calculator</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a onclick="demoReq()">Request Demo</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-	<section id="mission" class="content fade-scroll">
-		<div class="image-text-container">
-			<img src="images/callCenter.png" alt="Placeholder Image" class="image">
-			<div class="text-block slide-in">
-				<h3>Our Mission is to Simplify Claims Processing</h3>
-				<p>At AdjusterConsole, our mission is to solve the most common pain points in the claims industry through ingenuity and the simplification of tasks. We aim to streamline claims processing by standardizing data entry, ensuring consistency in note-taking, and increasing accuracy and compliance. By placing essential information at adjusters’ fingertips, we reduce the risk of errors and speed up decision-making, allowing your team to focus on higher-value tasks. Our innovative tools manage time-consuming processes, such as filling templates and formatting notes, driving faster claim resolutions, improving customer satisfaction, and positively impacting your bottom line.</p>
+    <div class="content">
+	<div class="triangle-shape2"></div>
+		<h2>Boost Claims Processing Productivity by up to 30%</h2>
+		<h1 class="colory">Simplify Claims</h1>
+		<h1 class="colorg">Save Time</h1>
+		<h1 class="colorb">Reduce Errors</h1>
+		<button class="cta-button" onclick="demoReq()">&lt&lt&lt Request a Demo &gt&gt&gt</button>
+		<video autoplay muted loop class="background-video"><source src="assets/webVid.webm" type="video/webm">Your browser does not support the video tag.</video>
+
+		<div class="overlay"></div>
+		<div class="triangle-shape"></div>
+    </div>
+
+
+  	<section id="stats">
+		<h2>AdjusterConsole Enhances Task Completion, Increasing Speed and Accuracy</h2>
+		<div class="stats">
+			<div><div class="circleDiv">157%</div><span>SOP document look-up</span></div>
+			<div><div class="circleDiv">2900%</div><span>Complex note completion</span></div>
+			<div><div class="circleDiv">500%</div><span>SOP execution</span></div>
+			<div><div class="circleDiv">2300%</div><span>Policy look-up</span></div>
+		</div>
+	</section> 
+	<section id="movie">
+	<div id="whatisAC">
+			<div id="whatText">
+				<h2>What is AdjusterConsole?</h2>
+				AdjusterConsole is an innovative software that boosts insurance & warranty claims processing efficiency. It automates tasks like note-taking and SOP execution, streamlining workflows and reducing errors. By consolidating essential information into a single interface, it enables quick access and decision-making. With a user-friendly design and customizable features, AdjusterConsole adapts to organizational needs, ensuring accurate claims management and improving customer satisfaction.
 			</div>
+			<div id="whatMov">
+				<video autoplay muted loop><source src="./assets/webVid.webm" type="video/webm"></video>
+			</div>
+	</div>
+	</section>
+	<section id="benefits">
+		<h2>Discover the Key Benefits of<br>Simplified Claims Management</h2>
+		<div class="flex-container">
+			<div class="flex-child">
+				<div class="upperText">Streamlined Workflows</div>
+				<div class="benefitImg"><img src="assets/Streamlined.png" alt="Streamlined" class="icon"></div>
+				<div class="lowerText">Automates routine tasks, speeding up claims processing & reducing workloads</div>
+			</div>
+			<div class="flex-child">
+				<div class="upperText">Task Automation</div>
+				<div class="benefitImg"><img src="assets/Task.png" alt="Task" class="icon"></div>
+				<div class="lowerText">Handles note-taking, SOP execution, and more, minimizing manual effort.</div>
+			</div>
+			<div class="flex-child">
+				<div class="upperText">Centralized Information</div>
+				<div class="benefitImg"><img src="assets/Centralized.png" alt="Centralized" class="icon"></div>
+				<div class="lowerText">Consolidates all essential data into one interface for quick access.</div>
+			</div>
+			<div class="flex-child">
+				<div class="upperText">Error Reduction</div>
+				<div class="benefitImg"><img src="assets/Error.png" alt="Error" class="icon"></div>
+				<div class="lowerText">Automation and standardizations leads to fewer mistakes in your claims processing.</div>
+			</div>
+			<div class="flex-child">
+				<div class="upperText">Unlimited Scalability</div>
+				<div class="benefitImg"><img src="assets/Unlimited.png" alt="Unlimited" class="icon"></div>
+				<div class="lowerText">AdjusterConsole scales effortlessly with your organization, supporting more users, claims, & integrations.</div>
+			</div>
+			<div class="flex-child">
+				<div class="upperText">No Privacy or Security Leaks</div>
+				<div class="benefitImg"><img src="assets/Lock.png" alt="Lock" class="icon"></div>
+				<div class="lowerText">By design, no personal information is entered into the system, making data security a non-issue</div>
+			</div>
+			<div class="flex-child">
+				<div class="upperText">Quick & Easy Onboarding</div>
+				<div class="benefitImg"><img src="assets/Onboarding.png" alt="Onboarding" class="icon"></div>
+				<div class="lowerText">We do 90% of the setup for you, plus AdjusterConsole is quick & easy to learn!</div>
+			</div>
+			<div class="flex-child">
+				<div class="upperText">Improved Customer Satisfaction</div>
+				<div class="benefitImg"><img src="assets/Stars.png" alt="Stars" class="icon"></div>
+				<div class="lowerText">Faster & more accurate processing improves your customer’s satisfaction.</div>
+			</div>
+		</div>
+		<button class="cta-button" onclick="demoReq()">&lt&lt&lt Request a Demo &gt&gt&gt</button>
+	</section>
+	<section id="solutions">
+		<h2>Solutions for the Insurance & Warranty Industries</h2>
+		<div class="imgFlex">
+			<div class="imgChild"><img src="assets/solutions1.png" alt="solutions"></div>
+			<div class="imgChild"><img src="assets/solutions2.png" alt="solutions"></div>
 		</div>
 	</section>
-
-
-
-	<section id="auto" class="content fade-scroll">
-		<div class="image-text-container">
-			<div class="text-block slide-in">
-				<h3>Automated SOPs to Ensure Consistency and Compliance</h3>
-				<p>Each company's Standard Operating Procedures (SOPs) are critical for maintaining consistency and compliance. Our program takes this a step further by codifying your company's specific SOPs into automated subroutines, ensuring that every claim is handled in accordance with your established rules—without exception. Adjusters follow a simple input process, and the program guides them step-by-step to ensure nothing is missed.</p>
-				<p>This not only boosts accuracy but also ensures your company adheres to internal compliance and industry standards, reducing costly errors and the need for rework.</p>
+	<section id="pricing">
+		<h2>Flexible Pricing for all Sized Businesses</h2>
+		
+		<div class="terms colory">No Contract</div>
+		<div class="pricing-tiers">	
+			<div class="tier">
+				<h3>Small Business</h3>
+				<p>(1-50 users)</p>
+				<hr><br>
+				<p>$42/month/user</p>
+				<br>
+				<p>Set-up fee: $10,000</p>
 			</div>
-			<img src="images/laptop.png" alt="Placeholder Image" class="image-big">
-		</div>
-	</section>
-
-
-    <section id="custom" class="content fade-scroll">
-		<div class="image-text-float">
-			<img src="images/smileWorker.png" alt="Placeholder Image" class="image-left-float-big">
-			<div class="text-block slide-in">
-				<h3>Customization to Fit Every Adjuster’s Workflow</h3>
-				<p>Every company has unique needs, and our program provides the flexibility to meet them. It offers a fully customizable interface where everything from button appearance to note output formatting can be modified to suit your team’s preferences. Users can even create their own custom buttons allowing adjusters to further tailor the program to their specific tasks.</p>
-				<p><strong>Customizable Appearance:</strong> Adjust the size, position, output, and text display of buttons.</p>
-				<p><strong>Tailored Operation:</strong> Modify the functionality and outputs for any task to align with company-specific SOPs.</p>
-				<p><strong>Scalable Across Teams:</strong> Whether you have 15 adjusters or 15,000, the program scales seamlessly across your organization.</p>
-				<p>This level of customization ensures that the program integrates smoothly into existing workflows while enhancing overall efficiency. Savings scale linearly—the more adjusters using the system, the more time and resources saved.</p>
+			<div class="tier">
+				<h3>Mid-Sized</h3>
+				<p>(51-200 users)</p>
+				<hr><br>
+				<p>$39/month/user</p>
+				<br>
+				<p>Set-up fee: $17,500</p>
 			</div>
-		</div>
-	</section>
-	
-    <section id="support" class="content fade-scroll">
-		<div class="image-text-float">
-			<img src="images/smileStanding2.png" alt="Placeholder Image" class="image-right-float">
-			<div class="text-block slide-in">
-				<h3>Unmatched Reliability and Support You Can Count On</h3>
-				<p>At the core of our program’s success is not just the technology but the dedicated customer service and technical support that back it. We understand that in the fast-paced world of insurance and warranty claims, even a moment of downtime or a small technical glitch can have a ripple effect on your operations. That’s why we guarantee 99.9% uptime, ensuring your team always has access to the tools they need to keep claims processing smooth and uninterrupted.</p>
-				<h4>Here’s What You Can Expect from Our Customer Service:</h4>
-				<p><strong>99.9% Uptime Guarantee:</strong> Reliability is key in the claims industry, and we ensure your team can depend on our tool whenever they need it. With near-perfect uptime, your business can continue operating without unnecessary interruptions or delays.</p>
-				<p><strong>Comprehensive Tech Support:</strong> We offer full technical support as part of your package, ensuring that any issues are addressed quickly and professionally. Whether it's a minor bug or a need for troubleshooting, our expert team is available to assist your staff every step of the way.</p>
-				<p><strong>Quick Response Times:</strong> Our support team is on standby to handle your requests with urgency and care. We pride ourselves on our rapid response times, making sure your operations remain unaffected.</p>
-				<p><strong>Ongoing Updates & Maintenance:</strong> Your purchase includes access to ongoing updates that keep the software up-to-date with the latest industry standards and performance optimizations. We handle all the maintenance, so you don’t have to worry about system downtime or obsolescence.</p>
-				<img id="tableImg" src="images/conferenceTable.png" alt="Placeholder Image" class="image-left-float-big">
-				<h4>Our Commitment to You:</h4>
-				<p>We believe that technology is only as strong as the support behind it. From the moment you deploy our program, you’ll have access to a team of professionals who are committed to your success. We are always here to ensure your claims adjusters can work efficiently and without disruption.</p>
-				<p>With our program, you can trust that both your software and your service needs are being taken care of—allowing your team to focus on what they do best.</p>
-				
+			<div class="tier">
+				<h3>Large Business</h3>
+				<p> (201+ users)</p>
+				<hr><br>
+				<p>$37/month/user</p>
+				<br>
+				<p>Set-up fee: $25,000</p>
 			</div>
 		</div>
-    </section>
-
-    <section id="security" class="content fade-scroll">
-		<div class="image-text-container">
-			<div class="text-block slide-in">
-				<h3>Security and Compliance: Built for Simplicity, Not Complexity</h3>
-				<p>One of the key strengths of our program is its simplicity in deployment and use. The program operates either as a stand-alone Windows package or a web-based platform, providing complete flexibility. Since the system is primarily input/output driven—using clicks to generate structured notes and procedural guidance—no sensitive personal information is required.</p>
-				<p><strong>Data Security:</strong> By design, no personal information is entered into the system, making data security a non-issue.</p>
-				<p><strong>Compliance Assurance:</strong> The system’s standardized processes ensure that every claim is handled according to your company’s specifications, mitigating the risk of non-compliance.</p>
-				<p>Your claims will be processed faster, with fewer errors, and in full accordance with company and industry regulations, ensuring peace of mind for your clients, adjusters, and executive team.</p>
+		
+		<div class="terms colorg">2-Year Contract</div>
+		<div class="pricing-tiers">
+			<div class="tier">
+				<h3>Small Business</h3>
+				<p>(1-50 users)</p>
+				<hr><br>
+				<p>$42/month/user</p>
+				<br>
+				<p>Set-up fee: <gc>Waived</gc></p>
 			</div>
-			<img src="images/holder.png" alt="Placeholder Image" class="image-big">
-		</div>
-    </section>
-
-    <section id="future" class="content fade-scroll">
-		<div class="image-text-container">
-			<img src="images/holder.png" alt="Placeholder Image" class="image">
-			<div class="text-block slide-in">
-				<h3>Future-Proof Technology That Grows with Your Business</h3>
-				<p>Unlike other tools that may become obsolete as workflows evolve, our program is designed to remain relevant and adaptable. As long as there are adjusters processing claims, this tool will continue to deliver value by conforming to new or changing SOPs. With its highly flexible structure, you can easily update it to meet future industry requirements or evolving company policies.</p>
+			<div class="tier">
+				<h3>Mid-Sized</h3>
+				<p>(51-200 users)</p>
+				<hr><br>
+				<p>$39/month/user</p>
+				<br>
+				<p>Set-up fee: <gc>Waived</gc></p>
 			</div>
-		</div>
-    </section>
-	
-	<section id="training" class="content fade-scroll">
-		<div class="image-text-float">
-			<img src="images/holder.png" alt="Placeholder Image" class="image-right-float">
-			<div class="text-block slide-in">
-				<h3>Comprehensive Training for Immediate Productivity</h3>
-				<p>To ensure that you reap the benefits of our program from day one, we offer a comprehensive training session for your team. This session is designed to jumpstart productivity increases by familiarizing your adjusters with the tool and its capabilities.</p>
-				<p>Here’s what you can expect from our training:</p>
-				<ul>
-					<li><strong>Hands-On Learning:</strong> Our experts will guide your team through the features and functionalities of the program, ensuring they feel confident and equipped to utilize it effectively.</li>
-					<li><strong>Custom Training Plan:</strong> We tailor the training to meet the specific needs of your organization, addressing any unique workflows or challenges your adjusters may face.</li>
-					<li><strong>Real-Time Support:</strong> During the training session, participants can ask questions and receive immediate assistance, making the learning process smooth and engaging.</li>
-					<li><strong>Measurable Outcomes:</strong> By the end of the session, your team will be ready to implement the program and start experiencing productivity benefits right away, allowing you to measure improvements from day one.</li>
-				</ul>
-				<p>Our commitment to training ensures that your investment in our program pays off quickly, helping your claims adjusters to work more efficiently and effectively.</p>
+			<div class="tier">
+				<h3>Large Business</h3>
+				<p> (201+ users)</p>
+				<hr><br>
+				<p>$37/month/user</p>
+				<br>
+				<p>Set-up fee: <gc>Waived</gc></p>
 			</div>
 		</div>
 	</section>
 		
-	<section id="pricing" class="content fade-scroll">
-		<div class="image-text-container">
-			<div class="text-block slide-in">
-				<h3>Flexible Pricing, Built for Your Needs</h3>
-				<p>Our Adjuster Console program provides unmatched flexibility at an incredible value. With a fully customizable interface and a pricing model designed to fit businesses of all sizes, you get the tools you need without unnecessary complexity. No upfront fees for contract options—just powerful features proven to boost productivity.</p>
-
-				<h4>Base Package</h4>
-				<p>The base package includes:</p>
-				<ul>
-					<li>5 Custom Subroutines (template, composite, codified SOPs, or script)</li>
-					<li>TrackerTool</li>
-					<li>NoteBuilder (with up to 25 custom outputs)</li>
-					<li>SOP Menu</li>
-					<li>Custom FAQ Section</li>
-					<li>8 Custom Policy Pages</li>
-					<li>Diagnostic Assistance Section</li>
-					<li>Intake Section</li>
-					<li>25 Custom Simple Note Buttons</li>
-					<li>Custom Button Creation (user-configurable)</li>
-					<li>Color Customization (per client specifications)</li>
-				</ul>
-
-				<p><strong>Pricing Options:</strong></p>
-				<ul>
-					<li><strong>3-Year Contract Option:</strong> No setup fee</li>
-					<li><strong>No Contract Option:</strong> One-time setup fee of $15,000</li>
-					<li><strong>10% Discount:</strong> Available if the annual cost is paid in full</li>
-				</ul>
-
-				<h4>Additional Custom Subroutines</h4>
-				<p>Need more subroutines? Add extra customizations at the following rates:</p>
-				<ul>
-					<li><strong>5 Additional Subroutines:</strong> $600 each</li>
-					<li><strong>Discounts:</strong> Volume discounts available at intervals of 5 subroutines</li>
-				</ul>
-	
-				<h4>Pricing Tiers (Monthly Per User)</h4>
-				<p>Our program scales seamlessly across your organization. Whether you're a small team or a large enterprise, we’ve got the right package for you:</p>
-				<ul>
-					<li><strong>Up to 50 Users:</strong> $41.58 per user per month</li>
-					<li><strong>Up to 200 Users:</strong> $39.08 per user per month</li>
-					<li><strong>201+ Users:</strong> $36.58 per user per month</li>
-				</ul>
-
-				<p>With flexible pricing and customization options, the Adjuster Console program ensures you get exactly what you need to optimize your claims processes.</p>
-			</div>
-		</div>
+	<section id="about">
+		<div>
+			<h2>About Us</h2>
+			<p>AdjusterConsole was founded by Jesse Williams, a warranty claims insider, who noticed the inefficiencies in his claims processing and developed a solution to increase his own productivity.</p>
+			<p>He designed and developed an early version of AdjusterConsole in his spare time and saw an immediate improvement in his efficiency</p>
+			<p>A light bulb went on and he quickly began iterating on his original design and developed a program that could be used to improve productivity for both the insurance and warranty industries.</p>
+		<div>
 	</section>
-
-
-
-	
-    <section id="calculator" class="calculator content fade-scroll">
-		<div class="image-text-container">
-			<div class="text-block slide-in">
-				<h3>Estimate Your Savings vs Cost</h3>
-				<p>Enter the number of employees to see how much you could save:</p>
+	<section id="calculator" class="calculator">
+		<div class="calcWhole">
+			<div class="calcInput">
+				<h2>Estimate Your Savings vs Cost</h2>
+				<p>Enter the number of claims adjusters your business has.</p>
 				<input type="number" id="employees" placeholder="Number of Employees" min="50" step="50"><br>
 				<button id="calculateBtn">Calculate Savings</button>
-				<p id="result"></p>
-				<p>We have nothing to hide! This calculation assumes a modest 7.5% increase in productivity for a worker earning $24/hour, working 40 hours a week. Actual savings may vary based on factors such as employee pay rates, existing procedures, and the complexity of tasks.</p>
-				<p>However, as users gain experience, the efficiency gains will likely be even higher. This estimate is a starting point and we typically expect results to steadily improve over time and exceed this estimate.</p>
-        	</div>
-		</div>
-    </section>
-
-    <section id="demo" class="content fade-scroll">
-		<div class="image-text-container">
-			<div class="text-block slide-in">
-				<h3>See the Results for Yourself</h3>
-				<p>Schedule a demo today to experience how this tool can transform your claims processing operations.</p>
-				<button id="scheduleButton" onclick="toggleForm()">Schedule a Demo</button>
-				<div id="scheduleForm" class="hidden">
-					<form onsubmit="sendEmail(event)" class="form-layout">
-						<div class="form-group">
-							<label for="name">Name:</label>
-							<input type="text" id="name" required>
-						</div>
-						<div class="form-group">
-							<label for="email">Email:</label>
-							<input type="email" id="email" required>
-						</div>
-						<div class="form-group">
-							<label for="company">Company:</label>
-							<input type="text" id="company" required>
-						</div>
-						<div class="form-group">
-							<label for="time">Message:</label>
-							<input type="text" id="time" required>
-						</div>
-						<div class="form-buttons">
-							<button type="submit" class="marginite">Submit</button>
-							<button type="button" onclick="toggleForm()">Cancel</button>
-						</div>
-					</form>
+				
+				<div id="underCalc">
+					<p>We have nothing to hide!</p>
+					<p>This calculation assumes a modest 10% increase in productivity for a worker earning $24/hour, working 40 hours a week. Actual savings may vary based on factors such as employee pay rates, existing procedures, and the complexity of tasks.</p>
+					<p>However, as users gain experience, the efficiency gains will likely be even higher. This estimate is a starting point and we typically expect results to steadily improve over time and exceed this estimate.</p>
 				</div>
 			</div>
+			<div id="result" class="calcResult"></div>
 		</div>
     </section>
 	
-	<section id="copyright" class="content fade-scroll">
-		<div class="text-block slide-in">
-			<a href="mailto:info@adjusterconsole.com">Info@AdjusterConsole.com</a>
-			<p>&copy; 2024 AdjusterConsole, LLC. All Rights Reserved</p>
-		</div>
-	</section>
+<div id="demoForm" class="form-overlay">
+  <div class="form-container">
+    <span class="close-btn" onclick="closeForm()">&times;</span>
+    <h1>Request a Demo</h1>
+    <form id="demoRequestForm">
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" name="firstName" required>
 
-	<button id="backToTop" aria-label="Back to top">&uarr;</button>
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" name="lastName" required>
+
+      <label for="companyName">Company Name:</label>
+      <input type="text" id="companyName" name="companyName" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit" onclick="submitForm(event)">Submit</button>
+      <button type="button" onclick="closeForm()">Cancel</button>
+    </form>
+  </div>
+</div>
 	
-    <script src="script.js"></script>
-	
+		<!-- Footer -->
+	<footer>
+		<p>&copy; 2024 AdjusterConsole</p>
+	</footer>
+
+	<script src="script.js"></script>
 </body>
 </html>
+
+
