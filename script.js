@@ -77,30 +77,65 @@ function closeForm() {
     document.getElementById('demoForm').style.display = 'none';
 }
 
+// Function to handle form submission using AJAX
 function submitForm(event) {
-    event.preventDefault(); // Prevent the form from reloading the page
-    
-    // You can collect the form data here for further processing
-    const firstName = document.getElementById('firstName').value;
-    const lastName = document.getElementById('lastName').value;
-    const companyName = document.getElementById('companyName').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-    const message = document.getElementById('message').value;
-    
-    // Do something with the form data (e.g., send it to a server)
-    console.log({
-        firstName,
-        lastName,
-        companyName,
-        email,
-        phone,
-        message
-    });
+    event.preventDefault(); // Prevent the default form submission
 
-    // Close the form after submission
-    closeForm();
+    // Get form data
+    const firstName = document.getElementById("firstName").value;
+    const lastName = document.getElementById("lastName").value;
+    const companyName = document.getElementById("companyName").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const message = document.getElementById("message").value;
+
+    // Prepare form data to be sent in the request
+    const formData = {
+        firstName: firstName,
+        lastName: lastName,
+        companyName: companyName,
+        email: email,
+        phone: phone,
+        message: message
+    };
+
+    // Send data to Cloudflare Worker using Fetch API
+    fetch("https://email-submit.mechprowilliams.workers.dev", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData) // Send form data as JSON
+    })
+    .then(response => response.text()) // Handle response from the Worker
+    .then(data => {
+        alert("Thank you! Your demo request has been submitted.");
+        closeForm(); // Close the form upon success
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("Oops! Something went wrong. Please try again.");
+    });
 }
+
+const logo = document.querySelector('.logo');
+const rightLinks = document.querySelector('.right-links');
+const navLinks = document.querySelector('.nav-links');
+const header = document.getElementById('myHeader');
+
+window.onscroll = function() {
+    if (window.scrollY > 50) { // Adjust the scroll value as needed
+        rightLinks.classList.add('scrolled');
+		logo.classList.add('scrolled');
+		navLinks.classList.add('scrolled');
+		//header.classList.add('scrolled');
+    } else {
+        rightLinks.classList.remove('scrolled');
+		logo.classList.remove('scrolled');
+		navLinks.classList.remove('scrolled');
+		//header.classList.remove('scrolled');
+    }
+};
 
 
 /*function ignore() {
