@@ -1,19 +1,9 @@
 function sendEmail(event) {
-    event.preventDefault(); // Prevent the default form submission
-    
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const company = document.getElementById("company").value;
-    const time = document.getElementById("time").value;
-
-    const subject = encodeURIComponent("Demo Request");
+    event.preventDefault();
     const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nCompany: ${company}\nMessage: ${time}`);
-    const mailtoLink = `mailto:AdjusterConsole@gmail.com?subject=${subject}&body=${body}`;
-    
-    window.location.href = mailtoLink; // Redirect to the email client
-
-    // Optionally, close the form after submission
-    toggleForm();
+    const mailtoLink = `mailto:Info@AdjusterConsole.com.com?subject=${subject}&body=${body}`;
+   
+    window.location.href = mailtoLink;
 }
 
 document.querySelector('.menu-icon').addEventListener('click', () => {
@@ -25,7 +15,6 @@ document.getElementById('calculateBtn').addEventListener('click', function() {
     const resultElement = document.getElementById('result');
     resultElement.style.opacity = '0';
     let employees = parseInt(employeesInput.value);
-
     if (!employees) {
         setTimeout(() => {
             resultElement.innerText = 'Enter estimated users';
@@ -41,26 +30,15 @@ document.getElementById('calculateBtn').addEventListener('click', function() {
 		} else {
 			costPerUser = 37;
 		}
-console.log('costPerUser',costPerUser);
-		// Estimate savings and cost
-		const saveEstimate = employees * 4992;
-		console.log('saveEstimate',saveEstimate);
+		const saveEstimate = employees * 5262;
 		const annualCost = employees * costPerUser * 12;
-		console.log('annualCost',annualCost);
 		const profit = saveEstimate - annualCost;
-		console.log('profit',profit);
 
-		// Calculate ROI
-		const ROI = (profit / annualCost) * 100;
-		console.log('ROI',ROI);
-
-		// Display the result
 		setTimeout(() => {
 			resultElement.innerHTML = `
 				<p>Projected Annual Savings: $${saveEstimate.toLocaleString()}</p>
 				<p>Annual Cost: $${annualCost.toLocaleString()}</p>
 				<p>Net Profit (Savings - Cost): $${profit.toLocaleString()}</p>
-				<p>Return on Investment (ROI): ${ROI.toFixed(2)}%</p>
 			`;
 			resultElement.style.opacity = '1';
 		}, 500);
@@ -68,20 +46,15 @@ console.log('costPerUser',costPerUser);
 });
 
 function demoReq() {
-    // Display the form overlay by changing its display style
     document.getElementById('demoForm').style.display = 'flex';
 }
 
 function closeForm() {
-    // Close the form overlay by hiding it
     document.getElementById('demoForm').style.display = 'none';
 }
 
-// Function to handle form submission using AJAX
 function submitForm(event) {
-    event.preventDefault(); // Prevent the default form submission
-
-    // Get form data
+    event.preventDefault();
     const firstName = document.getElementById("firstName").value;
     const lastName = document.getElementById("lastName").value;
     const companyName = document.getElementById("companyName").value;
@@ -89,7 +62,6 @@ function submitForm(event) {
     const phone = document.getElementById("phone").value;
     const message = document.getElementById("message").value;
 
-    // Prepare form data to be sent in the request
     const formData = {
         firstName: firstName,
         lastName: lastName,
@@ -98,19 +70,17 @@ function submitForm(event) {
         phone: phone,
         message: message
     };
-
-    // Send data to Cloudflare Worker using Fetch API
     fetch("https://email-submit.mechprowilliams.workers.dev", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(formData) // Send form data as JSON
+        body: JSON.stringify(formData)
     })
-    .then(response => response.text()) // Handle response from the Worker
+    .then(response => response.text())
     .then(data => {
         alert("Thank you! Your demo request has been submitted.");
-        closeForm(); // Close the form upon success
+        closeForm();
     })
     .catch(error => {
         console.error("Error:", error);
@@ -124,54 +94,49 @@ const navLinks = document.querySelector('.nav-links');
 const header = document.getElementById('myHeader');
 
 window.onscroll = function() {
-    if (window.scrollY > 50) { // Adjust the scroll value as needed
+    if (window.scrollY > 50) {
         rightLinks.classList.add('scrolled');
 		logo.classList.add('scrolled');
 		navLinks.classList.add('scrolled');
-		//header.classList.add('scrolled');
     } else {
         rightLinks.classList.remove('scrolled');
 		logo.classList.remove('scrolled');
 		navLinks.classList.remove('scrolled');
-		//header.classList.remove('scrolled');
     }
 };
 
-
-/*function ignore() {
-num_adjusters = 100
-pay_per_hour = 26  # Average pay per adjuster per hour
-benefits_percentage = 0.35  # Assume 35% for benefits and overhead
-working_hours_per_day = 8
-working_days_per_year = 250
-productivity_increase = 0.10  // 10% increase in productivity
-claims_per_adjuster_per_day = 15
-program_costs = 200000 
-
-# Calculate total compensation per adjuster (including benefits)
-pay_per_day = pay_per_hour * working_hours_per_day
-annual_base_salary = pay_per_day * working_days_per_year
-annual_total_compensation_per_adjuster = annual_base_salary * (1 + benefits_percentage)
-
-# Current total claims processed per day
-current_total_claims = num_adjusters * claims_per_adjuster_per_day
-
-# Increased claims due to productivity gain (10%)
-additional_claims_per_adjuster = claims_per_adjuster_per_day * productivity_increase
-total_additional_claims_per_day = additional_claims_per_adjuster * num_adjusters
-
-# Annual total additional claims due to productivity increase
-additional_claims_per_year = total_additional_claims_per_day * working_days_per_year
-
-# Calculate how many adjusters' worth of work this saves
-claims_per_adjuster_per_year = claims_per_adjuster_per_day * working_days_per_year
-adjuster_savings = additional_claims_per_year / claims_per_adjuster_per_year
-
-# Calculate the cost savings by avoiding hiring new adjusters
-total_cost_savings = adjuster_savings * annual_total_compensation_per_adjuster
-
-# Net benefit (cost savings from increased productivity - program costs)
-net_program_value = total_cost_savings - program_costs
-
-net_program_value
-}*/
+document.addEventListener('DOMContentLoaded', () => {
+	if (window.innerWidth < 768) {
+		function handleClick() {
+			const clickedId = this.id;
+			const capitalizedId = clickedId.charAt(0).toUpperCase() + clickedId.slice(1);
+			const targetId = 'full' + capitalizedId;
+			const targetElement = document.getElementById(targetId);
+			if (targetElement.classList.contains('leftSlide')) {
+				targetElement.classList.add('leftIn');
+			} else if (targetElement.classList.contains('rightSlide')) {
+				targetElement.classList.add('rightIn');
+			}
+		}
+		const flexChildren = document.querySelectorAll('.flex-child');
+		flexChildren.forEach((child) => {
+			child.addEventListener('click', handleClick);
+		});
+		
+		function handleSlideClick() {
+			if (this.classList.contains('leftSlide')) {
+				this.classList.remove('leftIn'); 
+			} else if (this.classList.contains('rightSlide')) {
+				this.classList.remove('rightIn');
+			}
+		}
+		const leftSlides = document.querySelectorAll('.leftSlide');
+		const rightSlides = document.querySelectorAll('.rightSlide');
+		leftSlides.forEach((slide) => {
+			slide.addEventListener('click', handleSlideClick);
+		});
+		rightSlides.forEach((slide) => {
+			slide.addEventListener('click', handleSlideClick);
+		});
+	}
+ });
